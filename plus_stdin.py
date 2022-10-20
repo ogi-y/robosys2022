@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # SPDX-FileCopyrightText: 2022 Yoshihiro Ogishima
+# SPDX-Licende-Identifier: BSD-3-Clause
 
 import sys
 
