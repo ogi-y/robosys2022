@@ -3,6 +3,7 @@
 # SPDX-Licende-Identifier: BSD-3-Clause
 
 import sys
+import fileinput
 
 def tonum(s):
     try:
@@ -12,6 +13,7 @@ def tonum(s):
 
 ans = 0
 for line in sys.stdin:
+    line = line.rstrip()
     ans += tonum(line)
 
 print(ans)
