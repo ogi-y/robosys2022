@@ -11,7 +11,7 @@ res=0
 
 ### I/O TEST ###
 out=$(cat input_sample | ./plus)
-[ "${out}" = 5.0 ] || ng ${LINENO}
+[ "${out}" = 5 ] || ng ${LINENO}
 
 ### STRANGE INPUT ###
 out=$(echo あ | ./plus)
