@@ -10,8 +10,20 @@ ng () {
 res=0
 
 ### I/O TEST ###
-out=$(cat input_sample | ./plus)
-[ "${out}" = 5 ] || ng ${LINENO}
+out=$(seq 3 | ./plus)
+[ "${out}" = 6 ] || ng ${LINENO}
+
+out=$(seq 3 | sed '3a -2' | ./plus)
+[ "${out}" = 4 ] || ng ${LINENO}
+
+out=$(seq 3 | sed '3a *4' | ./plus)
+[ "${out}" = 24 ] || ng ${LINENO}
+
+out=$(seq 3 | sed '3a /3' | ./plus)
+[ "${out}" = 2.0 ] || ng ${LINENO}
+
+out=$(echo '>a' | ./plus)
+[ "${out}" = 'a' ] || ng ${LINENO}
 
 ### STRANGE INPUT ###
 out=$(echo あ | ./plus)
@@ -19,6 +31,18 @@ out=$(echo あ | ./plus)
 [ "${out}" = "" ] || ng ${LINENO}
 
 out=$(echo | ./plus)
+[ "$?" = 1 ]      || ng ${LINENO}
+[ "${out}" = "" ] || ng ${LINENO}
+
+out=$(echo '#' | ./plus)
+[ "$?" = 1 ]      || ng ${LINENO}
+[ "${out}" = "" ] || ng ${LINENO}
+
+out=$(echo '+-1' | ./plus)
+[ "$?" = 1 ]      || ng ${LINENO}
+[ "${out}" = "" ] || ng ${LINENO}
+
+out=$(echo '*/1' | ./plus)
 [ "$?" = 1 ]      || ng ${LINENO}
 [ "${out}" = "" ] || ng ${LINENO}
 

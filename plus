@@ -3,24 +3,35 @@
 # SPDX-Licende-Identifier: BSD-3-Clause
 
 import sys
-import fileinput
+
+n = 0
+ans = 0
+strng = '_'
 
 def tonum(s):
+    global n
+    n = 1
     try:
         return int(s)
     except:
         return float(s)
 
-ans = 0
-
-for line in fileinput.input():
-    if line[0] == '*':
-        line = line.lstrip('*')
-        ans *= tonum(line)
+for line in sys.stdin:
+    line = line.rstrip()
+    if line == '###':
+        if strng != '_': print(strng.lstrip('_'))
+        if n == 1: print(ans)
+        n = 0
+        strng = '_'
+        ans = 0
+    elif line[0] == '>':    
+        strng += line.lstrip('>')
+    elif line[0] == '*':
+        ans *= tonum(line.lstrip('*'))
     elif line[0] == '/':
-        line = line.lstrip('/')
-        ans /= tonum(line)
+        ans /= tonum(line.lstrip('/'))
     else:
         ans += tonum(line)
 
-print(ans)
+if strng != '_': print(strng.lstrip('_'))        
+if n == 1: print(ans)
