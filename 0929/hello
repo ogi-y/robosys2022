@@ -1,4 +1,0 @@
-#!/usr/bin/python3
-
-print("hello") #文字
-print(3.14) #数字
