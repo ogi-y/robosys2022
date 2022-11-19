@@ -34,7 +34,7 @@
     * (3-1)*4/2=
     * 4.0
 * 入力例 2
-    * >こんにちは
+    * \>こんにちは
 * 出力例 2    
 ## 必要なソフトウェア
 * Python
@@ -44,6 +44,5 @@
 * Ubuntu
 
 ## 権利表記
-* このソフトウェアパッケージは，下記の3条項BSDライセンスの下，再頒布および使用が許可されます．
-* https://opensource.org/licenses/BSD-3-Clause
+* このソフトウェアパッケージは，下記の[3条項BSDライセンス](https://opensource.org/licenses/BSD-3-Clause)の下，再頒布および使用が許可されます．
 * © 2022 Yoshihiro Ogishima
