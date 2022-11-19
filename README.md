@@ -48,5 +48,5 @@
 * Ubuntu 22.04.1 LTS
 
 ## 権利表記
-* このソフトウェアパッケージは、[3条項BSDライセンス](https://opensource.org/licenses/BSD-3-Clause)の下、再頒布および使用が許可されます．
+* このソフトウェアパッケージは、[3条項BSDライセンス](https://opensource.org/licenses/BSD-3-Clause)の下、再頒布および使用が許可されます。
 * © 2022 Yoshihiro Ogishima
